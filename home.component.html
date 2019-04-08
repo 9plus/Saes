@@ -1,0 +1,144 @@
+<mat-toolbar class="home-header mat-elevation-z6" color="accent">
+    <button mat-icon-button (click)="toggleSideNav(sideNav)">
+      <mat-icon>{{ sideNav.opened ? 'close' : 'menu' }}</mat-icon>
+    </button>
+    <span>IT铁人赛－Angular Material Demo</span>
+    <span class="toolbar-seprator"></span>
+    <button mat-icon-button>
+      <mat-icon>message</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-sidenav-container class="home-container">
+  <mat-sidenav class="home-sidenav" opened="true" mode="side" #sideNav disableClose>
+    <button mat-raised-button color="warn">切换左边选单状态</button>
+    <mat-nav-list>
+      <h3 matSubheader>示范用页面</h3>
+      <a [routerLink]="['/', 'dashboard', 'survey']" mat-list-item>问卷调查</a>
+      <a [routerLink]="['/', 'dashboard', 'blog']" mat-list-item>部落格</a>
+      <a [routerLink]="['/', 'dashboard', 'inbox']" mat-list-item>收件夹</a>
+      <mat-divider></mat-divider>
+      <!-- 另外一组选单 -->
+      <h3 matSubheader>其他页面</h3>
+      <a [routerLink]="['/']" mat-list-item>首页</a>
+      <a [routerLink]="['/']" mat-list-item>Google</a>
+      <a [routerLink]="['/']" mat-list-item>Facebook</a>
+    </mat-nav-list>
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+      <button mat-raised-button color="primary">切换左边选单状态</button>
+      
+      <button mat-raised-button color="primary" routerLink="/account/login">Hello World!</button>
+      <button mat-raised-button>我是按钮</button>
+      <button mat-icon-button mat-raised-button color="primary"><mat-icon>thumb_up</mat-icon></button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+      <button mat-raised-button disabled>Disabled</button>
+      <a mat-raised-button>Link</a> <!-- 放在a tag裡面也没问题 -->
+      <div>
+        这是一般的ICON颜色
+        <mat-icon>person</mat-icon>
+      </div>
+
+      <div>
+        这是加上primary颜色的ICON
+        <mat-icon color="primary">thumb_up</mat-icon>
+      </div>
+
+      <div>
+        这是加上accent颜色的ICON
+        <mat-icon color="accent">info</mat-icon>
+      </div>
+
+      <div>
+        这是加上warn颜色的ICON
+        <mat-icon color="warn">warning</mat-icon>
+      </div>
+
+      <h2>自行注册SVG icon</h2>
+        
+      <div>
+        <mat-icon svgIcon="custom-svg:angular"></mat-icon>
+        <mat-icon svgIcon="custom-svg:angular" color="primary"></mat-icon>
+        <mat-icon svgIcon="custom-svg:angular" color="accent"></mat-icon>
+        <mat-icon svgIcon="custom-svg:angular" color="warn"></mat-icon>
+      </div>
+      <button mat-fab>
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button mat-fab color="primary">
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button mat-fab color="accent">
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button mat-fab color="warn">
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button mat-fab disabled>
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+
+      <button mat-mini-fab>
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button mat-mini-fab color="primary">
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent">
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button mat-mini-fab color="warn">
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button mat-mini-fab disabled>
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+
+      <mat-button-toggle-group #formatAlignGroup="matButtonToggleGroup">
+        <!-- button toogle所代表的值 -->
+        <mat-button-toggle value="left">
+          <mat-icon>format_align_left</mat-icon>
+        </mat-button-toggle>
+        <!-- 预设被选取 -->
+        <mat-button-toggle value="center" checked="true">
+          <mat-icon>format_align_center</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="right">
+          <mat-icon>format_align_right</mat-icon>
+        </mat-button-toggle>
+        <!-- 不允许选择的button toggle -->
+        <mat-button-toggle value="justify" disabled>
+          <mat-icon>format_align_justify</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <div>对齐方式为：{{ formatAlignGroup.value }}</div>
+
+      <!-- 加上multiple，则裡面的mat-buttong-toggle可以複选 -->
+      <!-- 加上vertical="true", 改变排列方式 -->
+      <mat-button-toggle-group multiple vertical="true">
+        <mat-button-toggle value="bold" #buttonToggleBold>
+          <mat-icon>format_bold</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="italic" checked="true" #buttonToggleItalic>
+          <mat-icon>format_italic</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="underlined" checked="true" #buttonToggleUnderlined>
+          <mat-icon>format_underlined</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <div>粗体：{{ buttonToggleBold.checked }}、斜体：{{ buttonToggleItalic.checked }}、底线：{{ buttonToggleUnderlined.checked }}</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
