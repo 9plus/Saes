@@ -20,8 +20,6 @@ export class HomeComponent implements OnInit {
       'angular',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/images/angular_solidBlack.svg')
     )
-
-    this.matIconRegistry.registerFontClassAlias('fontawesome','fab');
   }
   
   toggleSideNav(sideNav: MatSidenav) {

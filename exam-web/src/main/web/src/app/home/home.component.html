@@ -1,4 +1,4 @@
-<mat-toolbar class="home-header" color="accent">
+<mat-toolbar class="home-header mat-elevation-z6" color="accent">
     <button mat-icon-button (click)="toggleSideNav(sideNav)">
       <mat-icon>{{ sideNav.opened ? 'close' : 'menu' }}</mat-icon>
     </button>
@@ -67,17 +67,6 @@
         <mat-icon svgIcon="custom-svg:angular" color="accent"></mat-icon>
         <mat-icon svgIcon="custom-svg:angular" color="warn"></mat-icon>
       </div>
-
-      <h2>在MatIcon中使用FontAwesome</h2>
-
-      <div>
-        <!-- 就是<i class="fa fa-thumbs-up">的概念 -->
-        <mat-icon fontSet="fontawesome" fontIcon="fa-adn"></mat-icon>
-        <mat-icon fontSet="fontawesome" fontIcon="fa-adn" color="primary"></mat-icon>
-        <mat-icon fontSet="fontawesome" fontIcon="fa-adn" color="accent"></mat-icon>
-        <mat-icon fontSet="fontawesome" fontIcon="fa-adn" color="warn"></mat-icon>
-      </div>
-
       <button mat-fab>
         <mat-icon>thumb_up</mat-icon>
       </button>

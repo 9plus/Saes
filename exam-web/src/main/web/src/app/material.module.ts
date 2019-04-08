@@ -4,7 +4,10 @@ import { MatButtonModule,
         MatButtonToggleModule,
         MatSidenavModule,
         MatToolbarModule,
-        MatListModule
+        MatListModule,
+        MatTabsModule,
+        MatTableModule,
+        MatPaginatorModule,
     } from "@angular/material"
 
 @NgModule({
@@ -14,7 +17,10 @@ import { MatButtonModule,
         MatButtonToggleModule,
         MatSidenavModule,
         MatToolbarModule,
-        MatListModule
+        MatListModule,
+        MatTabsModule,
+        MatTableModule,
+        MatPaginatorModule
     ]
 })
 export class SharedMaterialModule {}
