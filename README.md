@@ -1,9 +1,13 @@
 # Introduction
 
-* Springboot
-* Angular5.0
-* MySql
-* ...
+一个考试系统
+
+**技术选型:**
+
+- Springboot
+- Angular5.0
+- MySql
+- ...
 
 # Function
 
