@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core";
-import { myPaginator} from './common/question-paginator';
 import { MatButtonModule,
         MatIconModule,
         MatButtonToggleModule,
