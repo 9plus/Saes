@@ -1,32 +1,34 @@
 <mat-toolbar color="primary" class="admin-header mat-elevation-z6">
-    <span>Angular Material Demo</span>
-    <span class="toolbar-seprator"></span>
-    <button mat-icon-button routerLink="/admin/question">
-      <mat-icon>message</mat-icon>
-    </button>
-    <button mat-icon-button>
-      <mat-icon>exit_to_app</mat-icon>
-    </button>
-  </mat-toolbar>
+  <span>Angular Material Demo</span>
+  <span class="toolbar-seprator"></span>
+  <button mat-icon-button routerLink="/admin/question">
+    <mat-icon>message</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
   
+<div>
   <mat-toolbar color="primary" class="admin-toolnav">
       <span>Second Title</span>
   </mat-toolbar>
-  
+
   <mat-sidenav-container class="admin-container">
     <mat-sidenav class="admin-sidenav" opened="true" mode="side" #sideNav>
       <mat-nav-list>
         <h3 matSubheader>示范用页面</h3>
         <a [routerLink]="['/', 'admin', 'question']" mat-list-item><i class="material-icons" style="margin-right: 20px;">edit</i>题目列表</a>
-  
+
         <mat-divider></mat-divider>
-  
+
         <h3 matSubheader>其他页面</h3>
         <a [routerLink]="['/']" mat-list-item>Google</a>
       </mat-nav-list>
     </mat-sidenav>
-  
+
     <mat-sidenav-content >
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+</div>

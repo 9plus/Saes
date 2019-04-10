@@ -1,5 +1,5 @@
 .admin-header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
@@ -7,7 +7,7 @@
 }
 
 .admin-toolnav {
-    position: absolute;
+    position: fixed;
     top: 56px;
     left: 0;
     width: 100%;
@@ -15,8 +15,9 @@
 }
 
 .admin-container {
-    position: absolute;
+    position: fixed;
     top: 136px;
+    left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -26,7 +27,7 @@
     width: 13%;
 }
 .admin-content {
-    position:absolute;
+    position: fixed;
     top: 10%;
     height: 100%;
 }

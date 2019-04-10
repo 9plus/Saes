@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource } from '@angular/material'
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 
 export interface PeriodicElement {
   name: string;
@@ -36,18 +36,23 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.css']
 })
-export class QuestionComponent implements OnInit {
+// implement AfterViewInit is for ngAfterViewInit
+export class QuestionComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  
+
   constructor() { 
-    this.dataSource.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
+    // setTimeout(() => this.dataSource.paginator = this.paginator);
   }
 
   ngOnInit() {
   }
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator; // or use setTimeout(() => this.dataSource.paginator = this.paginator);
+  }
 }
