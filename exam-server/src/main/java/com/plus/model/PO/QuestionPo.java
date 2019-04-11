@@ -1,4 +1,4 @@
-package com.plus.controller.model.PO;
+package com.plus.model.PO;
 
 import java.io.Serializable;
 
@@ -14,7 +14,13 @@ public class QuestionPo implements Serializable {
 
     private String answer;
 
+    private String selections;
+
     private String analysis;
+
+    private Integer type;
+
+    private String accuracy;
 
     private static final long serialVersionUID = 1L;
 
@@ -64,5 +70,44 @@ public class QuestionPo implements Serializable {
 
     public void setAnalysis(String analysis) {
         this.analysis = analysis;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public String getAccuracy() {
+        return accuracy;
+    }
+
+    public void setAccuracy(String accuracy) {
+        this.accuracy = accuracy;
+    }
+
+    public String getSelections() {
+        return selections;
+    }
+
+    public void setSelections(String selections) {
+        this.selections = selections;
+    }
+
+    @Override
+    public String toString() {
+        return "QuestionPo{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", difficulty=" + difficulty +
+                ", answer='" + answer + '\'' +
+                ", selections='" + selections + '\'' +
+                ", analysis='" + analysis + '\'' +
+                ", type=" + type +
+                ", accuracy='" + accuracy + '\'' +
+                '}';
     }
 }

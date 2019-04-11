@@ -1,7 +1,6 @@
-package com.plus.controller.dao;
+package com.plus.dao;
 
-import com.plus.controller.model.PO.QuestionPo;
-import org.aspectj.weaver.patterns.TypePatternQuestions;
+import com.plus.model.PO.QuestionPo;
 import org.springframework.stereotype.Component;
 
 @Component
