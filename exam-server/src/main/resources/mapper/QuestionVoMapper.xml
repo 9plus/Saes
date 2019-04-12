@@ -19,7 +19,7 @@
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="BaseColumnList" />
-        from s_question
+        from s_questions
         where id = #{id, jdbcType=Integer}
     </select>
 </mapper>

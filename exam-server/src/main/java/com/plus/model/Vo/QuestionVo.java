@@ -10,6 +10,12 @@ public class QuestionVo {
     private List<QuestionPo> questionList;
 
     public QuestionVo(){
-        questionList = new ArrayList<>();
+        questionList = new ArrayList<QuestionPo>();
+    }
+
+    public QuestionPo createQuestion(){
+        QuestionPo questionPo = new QuestionPo();
+        questionList.add(questionPo);
+        return questionPo;
     }
 }
