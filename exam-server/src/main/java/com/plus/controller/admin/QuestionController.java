@@ -19,6 +19,8 @@ public class QuestionController {
 
     @GetMapping(value = "query")
     public QuestionPo queryQuestion(int id){
-        return questionService.queryById(id);
+        QuestionPo q =  questionService.queryById(id);
+        System.out.println(q.getAccuracy());
+        return q;
     }
 }

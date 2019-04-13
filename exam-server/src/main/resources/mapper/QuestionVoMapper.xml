@@ -10,7 +10,7 @@
         <result column="selections" jdbcType="VARCHAR" property="selections" />
         <result column="analysis" jdbcType="VARCHAR" property="analysis" />
         <result column="type" jdbcType="INTEGER" property="type" />
-        <result column="accuracy" jdbcType="String" property="accuracy" />
+        <result column="accuracy" jdbcType="VARCHAR" property="accuracy" />
     </resultMap>
 
     <sql id="BaseColumnList">
@@ -20,6 +20,6 @@
         select
         <include refid="BaseColumnList" />
         from s_questions
-        where id = #{id, jdbcType=Integer}
+        where id = #{id, jdbcType=INTEGER}
     </select>
 </mapper>
