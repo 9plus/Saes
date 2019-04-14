@@ -7,7 +7,7 @@
 }
 
 .admin-toolnav {
-    position: fixed;
+    position: absolute;
     top: 56px;
     left: 0;
     width: 100%;
@@ -15,7 +15,7 @@
 }
 
 .admin-container {
-    position: fixed;
+    position: absolute;
     top: 136px;
     left: 0;
     width: 100%;

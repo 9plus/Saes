@@ -7,7 +7,7 @@ import { AdminRoutingModule } from './admin/admin-routing.module'
 const routes: Routes = [
   { 
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'admin',
     pathMatch: 'full' 
   },
   {

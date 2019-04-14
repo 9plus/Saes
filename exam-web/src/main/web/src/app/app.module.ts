@@ -9,6 +9,7 @@ import { SharedMaterialModule } from './material.module';
 import { LoginComponent} from './account/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AdminModule } from './admin/admin.module';
+import { SaesHttp } from './common/service/saes-http.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { AdminModule } from './admin/admin.module';
     SharedMaterialModule,
     AdminModule
   ],
-  providers: [],
+  providers: [SaesHttp],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

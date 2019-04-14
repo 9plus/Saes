@@ -8,7 +8,9 @@ import { MatButtonModule,
         MatTabsModule,
         MatTableModule,
         MatPaginatorModule,
-        MatPaginatorIntl,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
     } from "@angular/material"
 
 @NgModule({
@@ -21,7 +23,10 @@ import { MatButtonModule,
         MatListModule,
         MatTabsModule,
         MatTableModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
     ],
     // providers: [
     //     { provide: MatPaginatorIntl, useValue: myPaginator()}
