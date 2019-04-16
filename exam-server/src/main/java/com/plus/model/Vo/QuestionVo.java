@@ -18,4 +18,8 @@ public class QuestionVo {
         questionList.add(questionPo);
         return questionPo;
     }
+
+    public List<QuestionPo> getQuestions() {
+        return this.questionList;
+    }
 }

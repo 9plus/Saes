@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /*
 The @RestController annotation in Spring MVC is nothing but a combination
@@ -21,8 +22,8 @@ public class QuestionController {
     private IQuestionService questionService;
 
     @GetMapping(value = "query")
-    public QuestionPo queryQuestion(int id){
-        QuestionPo q =  questionService.queryById(id);
-        return q;
+    public List<QuestionPo> queryQuestion(int count, int skipCount){
+        List<QuestionPo> list = questionService.queryQuestions(count, skipCount);
+        return list;
     }
 }

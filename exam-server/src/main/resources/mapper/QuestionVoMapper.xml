@@ -22,4 +22,10 @@
         from s_questions
         where id = #{id, jdbcType=INTEGER}
     </select>
+    <select id="selectByCountAndSkip" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList" />
+        from s_questions
+        limit #{skipCount},#{count}
+    </select>
 </mapper>
