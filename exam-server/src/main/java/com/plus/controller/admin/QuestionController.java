@@ -4,6 +4,7 @@ import com.plus.model.PO.QuestionPo;
 import com.plus.service.IQuestionService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -22,7 +23,7 @@ public class QuestionController {
     private IQuestionService questionService;
 
     @GetMapping(value = "query")
-    public List<QuestionPo> queryQuestion(int count, int skipCount){
+    public List<QuestionPo> queryQuestion(Integer count, Integer skipCount){
         List<QuestionPo> list = questionService.queryQuestions(count, skipCount);
         return list;
     }

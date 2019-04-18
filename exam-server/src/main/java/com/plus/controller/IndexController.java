@@ -4,9 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+/**
+ * here we can't use @RestController. Because RestController will
+ * return string instead view as to 'forward:/index.html'
+ */
+@Controller
 @RequestMapping("/")
 public class IndexController {
 

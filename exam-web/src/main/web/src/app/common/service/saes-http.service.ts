@@ -13,12 +13,8 @@ export class SaesHttp {
 
   public get(url, params?: Object, callBack?: Function) {
     let httpParams = new HttpParams();
-    if (params) {
-      for (const key in params) {
-        if (params[key] === false || params[key]) {
-          httpParams = httpParams.set(key, params[key]);
-        }
-      }
+    for (const key of Object.keys(params)) {
+      httpParams = httpParams.set(key, params[key]);
     }
     this.http.get(this.server + url, {params: httpParams})
       .subscribe(res => {
