@@ -11,7 +11,9 @@ import { MatButtonModule,
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
+        MatSelectModule
     } from "@angular/material"
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
     exports: [
@@ -27,6 +29,9 @@ import { MatButtonModule,
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
+        MatSelectModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     // providers: [
     //     { provide: MatPaginatorIntl, useValue: myPaginator()}

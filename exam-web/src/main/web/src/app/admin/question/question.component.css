@@ -14,12 +14,15 @@ table {
 button {
     margin: 16px 8px;
 }
-.example-form {
+.question-upload-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
 }
 
-.example-full-width {
-    width: 100%;
+.question-upload-width {
+    width: 80%;
+}
+.question-upload-padding {
+    padding: 30px 50px;
 }

@@ -3,6 +3,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { SaesHttp } from '../../common/service/saes-http.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl } from '@angular/forms'
 
 export interface PeriodicElement {
   name: string;
@@ -43,13 +44,17 @@ const URL_QUERY_QUESTION = 'question/query';
 // implement AfterViewInit is for ngAfterViewInit
 export class QuestionComponent implements OnInit, AfterViewInit {
 
-  questionData: QuestionDto[] = [];
+  questionData: QuestionDto;
   displayedColumns = ['title', 'description', 'difficulty', 'accuracy', 'operation'];
-  dataSource = new MatTableDataSource<QuestionDto>(this.questionData);
+  dataSource = new MatTableDataSource<Question>();
 
   // MatPaginator's property
   pageSize: number;
   pageIndex: number;
+
+  // Select with multiple selection
+  toppings = new FormControl();
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -78,6 +83,7 @@ export class QuestionComponent implements OnInit, AfterViewInit {
     this.httpClient.get(URL_QUERY_QUESTION, param, function(res: Array<Question>) {
       this.questionData.items = res;
       this.questionData.totalCounts = res.length;
+      this.dataSource.ad
     });
   }
 }
