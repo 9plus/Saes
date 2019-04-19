@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { QuestionComponent} from './question/question.component'
+import { QuestionComponent } from './question/question.component';
+import { CategoryComponent } from './category/category.component';
 import { AdminComponent } from './admin.component';
 
 const routes: Routes = [
@@ -12,6 +13,19 @@ const routes: Routes = [
       {
         path: 'question',
         component: QuestionComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'categories'
+      },
+      {
+        path: '',
+        redirectTo: 'categories',
+        pathMatch: 'full'
+      },
+      {
+        path: 'categories',
+        component: CategoryComponent
       }
     ]
   },

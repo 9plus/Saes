@@ -4,9 +4,10 @@ import { QuestionComponent } from './question/question.component';
 import { AdminComponent } from './admin.component';
 import { SharedMaterialModule } from '../material.module';
 import { AdminRoutingModule } from './admin-routing.module';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
-  declarations: [QuestionComponent, AdminComponent],
+  declarations: [QuestionComponent, AdminComponent, CategoryComponent],
   imports: [
     AdminRoutingModule,
     CommonModule,

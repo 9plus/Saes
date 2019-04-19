@@ -1,0 +1,15 @@
+.category-list {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.category-list-item {
+    text-decoration: none;
+    width: 240px;
+    margin: 20px;
+    vertical-align: top;
+}
+.category-list-card {
+    max-width: 200px;
+    padding: 20px;
+}

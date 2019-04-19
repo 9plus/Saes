@@ -1,4 +1,4 @@
-<mat-tab-group mat-align-tabs="center">
+<mat-tab-group mat-align-tabs="left">
     <mat-tab label="题目列表">
       <mat-card>
         <mat-form-field class="table-filter">
@@ -30,6 +30,17 @@
     </mat-card>
     </mat-tab>
     <mat-tab label="导入/导出">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Message" disabled>
+          
+          <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+        </mat-form-field>
+        <button mat-icon-button mat-raised-button (click)="fileInput.click()">
+          <mat-icon>zoom_in</mat-icon>
+        </button>
+        <input hidden type="file" #fileInput>
+      </form>
     </mat-tab>
     <mat-tab label="...">Content 3</mat-tab>
   </mat-tab-group>

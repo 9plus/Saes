@@ -5,13 +5,13 @@ import { AccountRoutingModule } from './account/account-routing.module'
 import { AdminRoutingModule } from './admin/admin-routing.module'
 
 const routes: Routes = [
-  { 
+  {
     path: '',
     redirectTo: 'admin',
-    pathMatch: 'full' 
+    pathMatch: 'full'
   },
   {
-    path: "**",
+    path: '**',
     redirectTo: 'admin'
   },
   {
