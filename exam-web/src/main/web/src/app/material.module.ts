@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { MatButtonModule,
         MatIconModule,
         MatButtonToggleModule,
@@ -13,8 +13,9 @@ import { MatButtonModule,
         MatInputModule,
         MatSelectModule,
         MatDialogModule,
-    } from "@angular/material"
-import { FormsModule, ReactiveFormsModule} from '@angular/forms'
+    } from '@angular/material';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 @NgModule({
     exports: [
@@ -33,7 +34,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms'
         MatSelectModule,
         FormsModule,
         ReactiveFormsModule,
-        MatDialogModule
+        MatDialogModule,
+        MatFileUploadModule
     ],
     // providers: [
     //     { provide: MatPaginatorIntl, useValue: myPaginator()}

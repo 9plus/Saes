@@ -31,14 +31,27 @@
     <mat-tab label="导入">
       <form class="question-upload-form">
         <div class="question-upload-padding">
+          <div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+              Just drag and drop files here
+          </div>
+          <div style="width: 500px">
+              <mat-file-upload-queue #fileUploadQueue
+                  [fileAlias]="'file'"
+                  [httpUrl]="'www.baidu.com'" multiple>
+              
+                  <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+              </mat-file-upload-queue>
+          </div>
+        </div>
+        <!-- <div class="question-upload-padding">
           <mat-form-field class="question-upload-width" appearance="standard">
-            <!-- <mat-label>WORD,PDF</mat-label> -->
+            <mat-label>WORD,PDF</mat-label>
             <input matInput placeholder="Message" disabled>
             <mat-hint align="start"><strong>支持word,pdf</strong> </mat-hint>
           </mat-form-field>
           <button mat-raised-button>上传
           </button>
-        </div>
+        </div> -->
         <div class="question-upload-padding">
           <mat-form-field>
             <mat-label>选择题</mat-label>
