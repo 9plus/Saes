@@ -11,7 +11,8 @@ import { MatButtonModule,
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
-        MatSelectModule
+        MatSelectModule,
+        MatDialogModule,
     } from "@angular/material"
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 
@@ -31,7 +32,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms'
         MatInputModule,
         MatSelectModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatDialogModule
     ],
     // providers: [
     //     { provide: MatPaginatorIntl, useValue: myPaginator()}
