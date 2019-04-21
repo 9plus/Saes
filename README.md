@@ -1,13 +1,22 @@
 # Introduction
 
-一个考试系统
+一个在线考试系统。
 
 **技术选型:**
 
 - Springboot
-- Angular5.0
+- Angular5.0(TypeScript)
 - MySql
-- ...
+- Maven
+
+**UI:**
+
+* [Angular Material](<https://material.angular.io/>)
+
+**编译器:**
+
+* IDEA
+* Vscode
 
 # Function
 
@@ -27,6 +36,12 @@
 
 2019-4-8 管理员后台管理页面前端框架初步搭好
 
+2019-4-20 添加了**分类**页面，完善**问题列表**页面，前后端访问数据库打通。打算先实现自由组卷功能。
+
 # Show
 
+![分类页面](<https://github.com/9plus/Saes/blob/master/picture/category-page.png>)
+
 ![题目列表](<https://github.com/9plus/Saes/blob/master/picture/question-list.png>)
+
+![导入](<https://github.com/9plus/Saes/blob/master/picture/import-page.png>)
