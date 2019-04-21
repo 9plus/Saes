@@ -4,6 +4,7 @@ import { SaesHttp } from '../../common/service/saes-http.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms'
+import { DataSource } from '@angular/cdk/table';
 
 export interface PeriodicElement {
   name: string;
@@ -44,9 +45,12 @@ const URL_QUERY_QUESTION = 'question/query';
 // implement AfterViewInit is for ngAfterViewInit
 export class QuestionComponent implements OnInit, AfterViewInit {
 
-  questionData: QuestionDto;
+  questionData: QuestionDto = {
+    items: [],
+    totalCounts: 0
+  };
   displayedColumns = ['title', 'description', 'difficulty', 'accuracy', 'operation'];
-  dataSource = new MatTableDataSource<Question>();
+  dataSource: MatTableDataSource<Question>;
 
   // MatPaginator's property
   pageSize: number;
@@ -67,7 +71,9 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   }
 
   public ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator; // or use setTimeout(() => this.dataSource.paginator = this.paginator);
+    if (this.dataSource) {
+      this.dataSource.paginator = this.paginator; // or use setTimeout(() => this.dataSource.paginator = this.paginator);
+    }
   }
 
   public applyFilter(filterValue: string) {
@@ -75,15 +81,21 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   }
 
   public loadTable(event) {
-    this.queryQuestion(event.pageSize, event.pageIndex * event.pageSize);
+    this.queryQuestion(this.pageSize, this.pageIndex * this.pageSize);
   }
 
   public queryQuestion(queryCount: number, skipCount: number) {
+    let that = this;
     const param = {'count': queryCount, 'skipCount': skipCount};
     this.httpClient.get(URL_QUERY_QUESTION, param, function(res: Array<Question>) {
-      this.questionData.items = res;
-      this.questionData.totalCounts = res.length;
-      this.dataSource.ad
+      that.questionData.items = res;
+      that.questionData.totalCounts = res.length;
+      that.dataSource = new MatTableDataSource(that.questionData.items);
+      that.dataSource.paginator = that.paginator;
     });
+  }
+
+  public openEditDialog() {
+    
   }
 }

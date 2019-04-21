@@ -26,3 +26,10 @@ button {
 .question-upload-padding {
     padding: 30px 50px;
 }
+tr.question-element-row:hover {
+    background: #f5f5f5;
+}
+
+tr.question-element-row:active {
+    background: #efefef;
+}
